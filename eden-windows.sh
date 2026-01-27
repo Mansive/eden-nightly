@@ -144,6 +144,7 @@ fi
     # rm -rf ./bin/plugins
 # fi
 
+# Pack for upload
 echo "-- Packing build artifacts..."
 cd bin
 mv -v eden.exe "$EXE_NAME".exe
