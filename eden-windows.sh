@@ -130,13 +130,13 @@ if [[ "${OPTIMIZE}" == "normal" ]]; then
 fi
 
 # Delete un-needed debug files
-echo "-- Cleaning up un-needed files..."
-if [[ "${TOOLCHAIN}" == "MSYS2" ]]; then
-    find ./bin -type f \( -name "*.dll" -o -name "*.exe" \) -exec strip -s {} +
-else
-    find bin -type f -name "*.pdb" -exec rm -fv {} +
-    rm -rf ./bin/plugins
-fi
+#echo "-- Cleaning up un-needed files..."
+#if [[ "${TOOLCHAIN}" == "MSYS2" ]]; then
+    # find ./bin -type f \( -name "*.dll" -o -name "*.exe" \) -exec strip -s {} +
+#else
+    # find bin -type f -name "*.pdb" -exec rm -fv {} +
+    # rm -rf ./bin/plugins
+#fi
 
 # Pack for upload
 echo "-- Packing build artifacts..."
