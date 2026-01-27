@@ -103,6 +103,8 @@ case "${TOOLCHAIN}" in
         "-DENABLE_LTO=OFF"
         "-DCMAKE_C_COMPILER_LAUNCHER=sccache"
         "-DCMAKE_CXX_COMPILER_LAUNCHER=sccache"
+        "-DCMAKE_CXX_FLAGS_RELWITHDEBINFO=-MD -Z7 -O2 -Ob1 -DNDEBUG"
+        "-DCMAKE_C_FLAGS_RELWITHDEBINFO=-MD -Z7 -O2 -Ob1 -DNDEBUG"
         )
     ;;
 esac
