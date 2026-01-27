@@ -138,7 +138,7 @@ if [[ "${OPTIMIZE}" == "normal" ]]; then
 fi
 
 # Delete un-needed debug files
-# echo "-- Cleaning up un-needed files..."
+echo "-- Cleaning up un-needed files..."
 if [[ "${TOOLCHAIN}" == "MSYS2" ]]; then
     :
     # find ./bin -type f \( -name "*.dll" -o -name "*.exe" \) -exec strip -s {} +
