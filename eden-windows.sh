@@ -45,7 +45,7 @@ declare -a BASE_CMAKE_FLAGS=(
     "-DYUZU_CMD=OFF"
     "-DYUZU_ROOM=ON"
     "-DYUZU_ROOM_STANDALONE=OFF"
-    "-DCMAKE_BUILD_TYPE=Release"
+    "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
 )
 
 # Set Extra CMake flags
@@ -130,13 +130,13 @@ if [[ "${OPTIMIZE}" == "normal" ]]; then
 fi
 
 # Delete un-needed debug files
-#echo "-- Cleaning up un-needed files..."
-#if [[ "${TOOLCHAIN}" == "MSYS2" ]]; then
+# echo "-- Cleaning up un-needed files..."
+# if [[ "${TOOLCHAIN}" == "MSYS2" ]]; then
     # find ./bin -type f \( -name "*.dll" -o -name "*.exe" \) -exec strip -s {} +
-#else
+# else
     # find bin -type f -name "*.pdb" -exec rm -fv {} +
     # rm -rf ./bin/plugins
-#fi
+# fi
 
 # Pack for upload
 echo "-- Packing build artifacts..."
@@ -145,6 +145,6 @@ mv -v eden.exe "$EXE_NAME".exe
 ZIP_NAME="$EXE_NAME.zip"
 7z a -tzip -mx=9 "$ZIP_NAME" *
 rm -v "$EXE_NAME".exe
-echo "-- Packed into $ZIP_NAME"
+find . -type f -name "*.pdb" -exec rm -v {} +
 
 echo "=== ALL DONE! ==="
