@@ -48,7 +48,7 @@ declare -a BASE_CMAKE_FLAGS=(
     "-DYUZU_ROOM=ON"
     "-DYUZU_ROOM_STANDALONE=OFF"
     "-DCMAKE_SYSTEM_PROCESSOR=$(uname -m)"
-    "-DCMAKE_BUILD_TYPE=Release"
+    "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
     "-DCMAKE_EXE_LINKER_FLAGS=-Wl,--as-needed"
 )
 
