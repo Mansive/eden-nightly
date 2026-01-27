@@ -151,6 +151,7 @@ echo "-- Packing build artifacts..."
 cd bin
 mv -v eden.exe "$EXE_NAME".exe
 ZIP_NAME="$EXE_NAME.zip"
+rm -fv *.zip *.ilk *.exp *.lib
 7z a -tzip -mx=9 -x!*.zip "$ZIP_NAME" *
 rm -v "$EXE_NAME".exe
 find . -type f -name "*.pdb" -exec rm -v {} +
