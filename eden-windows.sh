@@ -123,6 +123,12 @@ echo "-- Starting build..."
 mkdir -p build
 cd build
 cmake .. -G Ninja "${BASE_CMAKE_FLAGS[@]}" "${EXTRA_CMAKE_FLAGS[@]}"
+
+if [[ "${TOOLCHAIN}" == "MSVC" && -d "../.cache" ]]; then
+    echo "-- Patching dependencies to force /Z7..."
+    find ../.cache -type f -name "CMakeLists.txt" -exec sed -i 's|/Zi|/Z7|g' {} +
+fi
+
 ninja
 echo "-- Build Completed."
 
