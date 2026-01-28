@@ -26,12 +26,12 @@ echo "   Target: $TARGET"
 echo "   Optimization: $OPTIMIZE"
 echo "   Count: $COUNT"
 
-# hook the updater to check my repo
-echo "-- Applying updater patch..."
-git apply ../patches/update.patch
-# display changelog
-git apply ../patches/changelog.patch
-echo "   Done."
+# # hook the updater to check my repo
+# echo "-- Applying updater patch..."
+# git apply ../patches/update.patch
+# # display changelog
+# git apply ../patches/changelog.patch
+# echo "   Done."
 
 # Set Base CMake flags
 declare -a BASE_CMAKE_FLAGS=(
